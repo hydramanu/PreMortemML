@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict');
+const {featureRanking,comparisonWarnings,decisionBrief}=require('../premortem/web/insights.js');
+const r={feature_scale:{a:1,b:1,c:1},history:[{feature:'a',balanced_accuracy:.8},{feature:'b',balanced_accuracy:.6},{feature:'a',balanced_accuracy:.4}],data_sha256:'same',seed:42,worst_scenario:{feature:'a'},environment:{python:'3.13'},ablations:[{component_removed:'offset',recovery_pp:4}],baseline:{balanced_accuracy:.9},stressed:{balanced_accuracy:.6},drop_pp:30,review_priority:'HIGH',repair_selected_on_validation:false};
+assert.deepEqual(featureRanking(r).map(x=>[x.feature,x.count,x.worst]),[['a',2,.4],['b',1,.6],['c',0,null]]);
+assert.equal(featureRanking(r)[0].mean,.6000000000000001);
+assert.equal(comparisonWarnings(r,r).length,0);
+assert.equal(comparisonWarnings(r,{...r,seed:2,data_sha256:'other',worst_scenario:{feature:'b'},environment:{python:'3.12'}}).length,4);
+assert(decisionBrief(r).some(s=>s.includes('did not pass')));
+assert(decisionBrief({...r,repair_selected_on_validation:true}).some(s=>s.includes('independent scenario suite')));
+assert(decisionBrief({...r,ablations:[]}).some(s=>s.includes('No individual')));
+console.log('7 insight checks passed');

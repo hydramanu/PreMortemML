@@ -1,0 +1,348 @@
+{
+  "version": "0.2.0",
+  "source": "synthetic demonstration (not real customer data)",
+  "seed": 42,
+  "trials": 5,
+  "backend": "optuna",
+  "data_sha256": "b39f24f8fbc1a2dcbfa2efe95723df6b2d7873b2e6db9dbf216881054d16ed2d",
+  "environment": {
+    "python": "3.13.0",
+    "sklearn": "1.8.0",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "optuna": "4.9.0"
+  },
+  "split_rows": {
+    "train": 1440,
+    "search": 480,
+    "test": 480
+  },
+  "feature_scale": {
+    "signal_1": 1.0038607105444792,
+    "signal_2": 1.708042377493252,
+    "signal_3": 2.7864580464321866,
+    "signal_4": 1.817002770370551,
+    "signal_5": 1.8058866510197145,
+    "signal_6": 1.937727434472272,
+    "signal_7": 1.632739525773565,
+    "signal_8": 1.6069831772687708
+  },
+  "worst_scenario": {
+    "feature": "signal_8",
+    "offset": -1.0815184180438746,
+    "noise": 0.29214464853521815,
+    "missing": 0.1465447373174767,
+    "outliers": 0.0456069984217036,
+    "prevalence": 0.6711055768358083
+  },
+  "baseline": {
+    "accuracy": 0.8791666666666667,
+    "balanced_accuracy": 0.8791666666666667,
+    "precision": 0.8669354838709677,
+    "recall": 0.8958333333333334,
+    "f1": 0.8811475409836066,
+    "roc_auc": 0.9415104166666668,
+    "brier": 0.09237792041150913,
+    "confusion_matrix": [
+      [
+        207,
+        33
+      ],
+      [
+        25,
+        215
+      ]
+    ]
+  },
+  "stressed": {
+    "accuracy": 0.646887334328761,
+    "balanced_accuracy": 0.7133333333333335,
+    "precision": 0.9197180230972346,
+    "recall": 0.519166666666667,
+    "f1": 0.6634676783468884,
+    "roc_auc": 0.8773923611111115,
+    "brier": 0.23278594436789907,
+    "confusion_matrix": [
+      [
+        143.26641073032218,
+        14.602912388490115
+      ],
+      [
+        154.8911671337045,
+        167.23950974748348
+      ]
+    ]
+  },
+  "repair_clean": {
+    "accuracy": 0.8833333333333333,
+    "balanced_accuracy": 0.8833333333333333,
+    "precision": 0.8650793650793651,
+    "recall": 0.9083333333333333,
+    "f1": 0.8861788617886179,
+    "roc_auc": 0.941579861111111,
+    "brier": 0.09199931965703582,
+    "confusion_matrix": [
+      [
+        206,
+        34
+      ],
+      [
+        22,
+        218
+      ]
+    ]
+  },
+  "repair_stressed": {
+    "accuracy": 0.8837405793243777,
+    "balanced_accuracy": 0.8787500000000001,
+    "precision": 0.9306516910082564,
+    "recall": 0.8933333333333346,
+    "f1": 0.9116070731281976,
+    "roc_auc": 0.9410659722222225,
+    "brier": 0.09285236445514307,
+    "confusion_matrix": [
+      [
+        136.42540672850708,
+        21.4439163903053
+      ],
+      [
+        34.36060553399337,
+        287.77007134719497
+      ]
+    ]
+  },
+  "repair_selected_on_validation": true,
+  "validation": {
+    "baseline_stress": 0.7249049462664285,
+    "repair_stress": 0.8790604003541732,
+    "baseline_clean": 0.8769857115574924,
+    "repair_clean": 0.8831750551224847
+  },
+  "repair_delta_ci95": [
+    0.12286458333333324,
+    0.1958854166666667
+  ],
+  "drop_pp": 16.583333333333318,
+  "review_priority": "HIGH",
+  "history": [
+    {
+      "trial": 1,
+      "feature": "signal_2",
+      "offset": 0.3033450352296265,
+      "noise": 0.7080725777960455,
+      "missing": 0.008233797718320978,
+      "outliers": 0.09699098521619944,
+      "prevalence": 0.6994655844802531,
+      "accuracy": 0.7892339669722831,
+      "balanced_accuracy": 0.8008154076749019,
+      "precision": 0.9134595132956213,
+      "recall": 0.7717842323651478,
+      "f1": 0.8366285100786154,
+      "roc_auc": 0.8592163058386437,
+      "brier": 0.161583822532808,
+      "confusion_matrix": [
+        [
+          119.71077973840922,
+          24.545739711068887
+        ],
+        [
+          76.62195614223516,
+          259.12152440828737
+        ]
+      ]
+    },
+    {
+      "trial": 2,
+      "feature": "signal_8",
+      "offset": -1.0815184180438746,
+      "noise": 0.29214464853521815,
+      "missing": 0.1465447373174767,
+      "outliers": 0.0456069984217036,
+      "prevalence": 0.6711055768358083,
+      "accuracy": 0.6593154847535714,
+      "balanced_accuracy": 0.7173735655132903,
+      "precision": 0.9081808846795996,
+      "recall": 0.5477178423236534,
+      "f1": 0.6832200839940935,
+      "roc_auc": 0.8614732894668324,
+      "brier": 0.22825653910293472,
+      "confusion_matrix": [
+        [
+          140.0347133940933,
+          17.834609724719353
+        ],
+        [
+          145.69395759356667,
+          176.43671928762208
+        ]
+      ]
+    },
+    {
+      "trial": 3,
+      "feature": "signal_8",
+      "offset": 1.396896099223678,
+      "noise": 0.8083973481164611,
+      "missing": 0.12184550766934828,
+      "outliers": 0.009767211400638388,
+      "prevalence": 0.6105398159072942,
+      "accuracy": 0.8046510035086235,
+      "balanced_accuracy": 0.7609825402061379,
+      "precision": 0.7749340589956306,
+      "recall": 0.9585062240663902,
+      "f1": 0.8569431211000968,
+      "roc_auc": 0.8753219095238922,
+      "brier": 0.1531487218086679,
+      "confusion_matrix": [
+        [
+          105.33349916214458,
+          81.60738920235457
+        ],
+        [
+          12.160129113506278,
+          280.89898252199384
+        ]
+      ]
+    },
+    {
+      "trial": 4,
+      "feature": "signal_5",
+      "offset": 0.06020406353343244,
+      "noise": 0.5467102793432796,
+      "missing": 0.07394178221021082,
+      "outliers": 0.09695846277645587,
+      "prevalence": 0.6650796940166688,
+      "accuracy": 0.8224493646362743,
+      "balanced_accuracy": 0.8215159985416417,
+      "precision": 0.900300083161591,
+      "recall": 0.8243430152143846,
+      "f1": 0.8606456190427035,
+      "roc_auc": 0.8659814695856993,
+      "brier": 0.13982005297526343,
+      "confusion_matrix": [
+        [
+          131.61387087010294,
+          29.14787600189658
+        ],
+        [
+          56.07642897269179,
+          263.1618241553097
+        ]
+      ]
+    },
+    {
+      "trial": 5,
+      "feature": "signal_1",
+      "offset": -0.3339681309315541,
+      "noise": 0.2713490317738959,
+      "missing": 0.3314950036607718,
+      "outliers": 0.035675332669358926,
+      "prevalence": 0.3685607058124285,
+      "accuracy": 0.8780108806381824,
+      "balanced_accuracy": 0.8832502879100913,
+      "precision": 0.7941148959303236,
+      "recall": 0.9031811894882433,
+      "f1": 0.8451423997251927,
+      "roc_auc": 0.9274813798850673,
+      "brier": 0.10219726713944854,
+      "confusion_matrix": [
+        [
+          261.66421630266615,
+          41.426644907368704
+        ],
+        [
+          17.128132386303722,
+          159.78100640366242
+        ]
+      ]
+    }
+  ],
+  "ablations": [
+    {
+      "component_removed": "offset",
+      "balanced_accuracy": 0.8437500000000003,
+      "recovery_pp": 13.041666666666686
+    },
+    {
+      "component_removed": "noise",
+      "balanced_accuracy": 0.7104166666666668,
+      "recovery_pp": -0.29166666666666785
+    },
+    {
+      "component_removed": "missing",
+      "balanced_accuracy": 0.7033333333333331,
+      "recovery_pp": -1.0000000000000342
+    },
+    {
+      "component_removed": "outliers",
+      "balanced_accuracy": 0.7245833333333335,
+      "recovery_pp": 1.1249999999999982
+    }
+  ],
+  "failure_curve": [
+    {
+      "intensity": 0.0,
+      "baseline": 0.8791666666666668,
+      "repair": 0.8833333333333335
+    },
+    {
+      "intensity": 0.1,
+      "baseline": 0.8741666666666669,
+      "repair": 0.8829166666666669
+    },
+    {
+      "intensity": 0.2,
+      "baseline": 0.8666666666666669,
+      "repair": 0.8825000000000003
+    },
+    {
+      "intensity": 0.30000000000000004,
+      "baseline": 0.854166666666667,
+      "repair": 0.8820833333333337
+    },
+    {
+      "intensity": 0.4,
+      "baseline": 0.8479166666666671,
+      "repair": 0.8808333333333337
+    },
+    {
+      "intensity": 0.5,
+      "baseline": 0.8358333333333337,
+      "repair": 0.8804166666666671
+    },
+    {
+      "intensity": 0.6000000000000001,
+      "baseline": 0.8091666666666673,
+      "repair": 0.8795833333333336
+    },
+    {
+      "intensity": 0.7000000000000001,
+      "baseline": 0.7841666666666672,
+      "repair": 0.8791666666666668
+    },
+    {
+      "intensity": 0.8,
+      "baseline": 0.7666666666666672,
+      "repair": 0.8795833333333334
+    },
+    {
+      "intensity": 0.9,
+      "baseline": 0.7420833333333337,
+      "repair": 0.8791666666666668
+    },
+    {
+      "intensity": 1.0,
+      "baseline": 0.7133333333333335,
+      "repair": 0.8787500000000001
+    }
+  ],
+  "limitations": [
+    "Bounded measurement-corruption simulation, not a prediction of future failures.",
+    "Worst discovered scenario is not a proven global worst case. Search changes one feature at a time with combined corruption types.",
+    "Label prevalence reweighting affects accuracy and precision, but not the balanced-accuracy search objective.",
+    "Ablation recovery is diagnostic, not proof of causality. Interactions need further study.",
+    "Bootstrap interval covers rows for one fixed scenario and corruption seed, not search or training uncertainty.",
+    "Review priority is a transparent heuristic, not a certified deployment risk score.",
+    "Numeric binary IID split only. Time-series, grouped rows and concept shifts need different protocols.",
+    "Repair is targeted augmentation; its wider robustness has not been established."
+  ]
+}
